@@ -638,6 +638,40 @@ link
 button
 
 ------------------------------------------- */
+.apply-button {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+  letter-spacing: 2px;
+  font-size: 12px;
+  background-color: rgb(255, 0, 89);
+  color: rgb(0, 0, 0);
+  border-radius: 70px;
+  padding: 8px;
+  height: 50px;
+  width: 10rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+  transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+}
+.apply-button span {
+  white-space: nowrap;
+}
+.apply-button:hover {
+  background-color: rgb(255, 0, 144);
+
+}
+
+
 .mil-button {
   cursor: pointer;
   display: -webkit-inline-box;
