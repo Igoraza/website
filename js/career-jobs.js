@@ -1,8 +1,10 @@
 // Function to fetch jobs from the API
 async function fetchJobs() {
     try {
-        const response = await fetch('http://127.0.0.1:8000/api/v1/career/jobs/');
+        const response = await fetch('https://igorazabackend-production.up.railway.app/api/v1/career/jobs/');
         const data = await response.json();
+        const msg = document.getElementById("not-found-message")
+        msg.classList.add("mil-hide")
         return data;
     } catch (error) {
         console.error('Error fetching jobs:', error);

@@ -22,13 +22,6 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- page name -->
     <title>IGORAZA</title>
-    <script>
-        document.onreadystatechange = function () {
-            if (document.readyState == "complete") {
-                aler("ready");
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -209,28 +202,14 @@
                             <!-- ! career data will here -->
                             <div class="col-lg-6">
 
-                                <div class="mil-accordion-group mil-up">
-                                    <div class="mil-accordion-menu">
-                                        <p id="career-title" class="mil-accordion-head">Flutter Developer Intern</p>
-                                    </div>
-                                    <p id="career-description" class="mil-mb-30">IGORAZA is now hiring Flutter interns—join our team and start your journey in app development! Gain hands-on experience, work on exciting projects, and learn from industry experts. Apply today and take the first step towards a successful career in tech!</p>
-                                    <!-- <p class="mil"><strong>Location:</strong> ${job.location}</p>
-                                    <p class="mil"><strong>Type:</strong> ${job.type}</p>
-                                    <p class="mil-mb-30"><strong>Expiry:</strong> ${job.expiry}</p> -->
-                                    <div class="mil-up mil-mb-30">
-                                        <a href="#" class="mil-link mil-dark mil-arrow-place">
-                                            <span>Apply Now</span>
-                                        </a>
-                                    </div>
-                                </div>
+                               
                                 <!-- ! un comment this code to implement the api call functionality -->
-                                <!-- <div id="jobs-container"></div>
-                                api call for career
+                                <div id="jobs-container"></div>
+                                <p id="not-found-message" class="not-found-message">Oops! Something went wrong. Refresh the page to continue.</p>
                                 <script src="js/career-jobs.js"></script>
                                 <script>
-                                    Call initCareerPage immediately after the script is loaded
                                     initCareerPage();
-                                </script> -->
+                                </script>
                             </div>
 
                         </div>

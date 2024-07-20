@@ -154,7 +154,9 @@ body {
   display: -ms-flexbox;
   display: flex;
 }
-
+.mil-hide{
+  display: none;
+}
 .mil-vert-between {
   display: -webkit-box;
   display: -ms-flexbox;
