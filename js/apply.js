@@ -1,3 +1,6 @@
+
+
+
 function getQueryParam(name) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
@@ -21,15 +24,16 @@ function hideModal() {
 // Event listeners for closing the modal
 document.querySelector('.mil-modal-close').addEventListener('click', hideModal);
 document.getElementById('modalCloseBtn').addEventListener('click', hideModal);
-window.addEventListener('click', function(event) {
+window.addEventListener('click', function (event) {
     const modal = document.getElementById('successModal');
     if (event.target == modal) {
         hideModal();
     }
 });
 
-document.getElementById('career-form').addEventListener('submit', function(event) {
+document.getElementById('career-form').addEventListener('submit', function (event) {
     event.preventDefault();
+    console.log("Func work")
 
     const form = event.target;
     const formData = new FormData(form);
@@ -46,37 +50,37 @@ document.getElementById('career-form').addEventListener('submit', function(event
     };
 
     const postData = new FormData();
-    
+
     Object.keys(data).forEach(key => {
         postData.append(key, data[key]);
     });
-    
+
     const resumeFile = formData.get('resume');
     if (resumeFile) {
         postData.append('resume', resumeFile, resumeFile.name);
     }
 
-    fetch('http://127.0.0.1:8000/api/v1/career/register/', {
+    fetch('https://igorazabackend-production.up.railway.app/api/v1/career/register/', {
         method: 'POST',
         body: postData,
     })
-    .then(response => {
-        if (!response.ok) {
-            return response.json().then(err => { throw err; });
-        }
-        return response.json();
-    })
-    .then(result => {
-        console.log('Success:', result);
-        showModal(); // Show the success modal
-        form.reset();
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        let errorMessage = 'There was an error submitting your application. Please check all fields and try again.';
-        if (typeof error === 'object' && error !== null) {
-            errorMessage += '\n\nDetails:\n' + Object.entries(error).map(([key, value]) => `${key}: ${value}`).join('\n');
-        }
-        alert(errorMessage); // Keep the alert for errors
-    });
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(err => { throw err; });
+            }
+            return response.json();
+        })
+        .then(result => {
+            console.log('Success:', result);
+            showModal(); // Show the success modal
+            form.reset();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            let errorMessage = 'There was an error submitting your application. Please check all fields and try again.';
+            if (typeof error === 'object' && error !== null) {
+                errorMessage += '\n\nDetails:\n' + Object.entries(error).map(([key, value]) => `${key}: ${value}`).join('\n');
+            }
+            alert(errorMessage); // Keep the alert for errors
+        });
 });

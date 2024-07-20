@@ -133,6 +133,16 @@ $(function () {
             scrollTop: target.offset().top - offset
         }, 400);
     });
+
+
+
+    //*** form
+    $(document).ready(function() {
+        $('#form-btn').on("click", function() {
+            console.log("FORM APPLIED");
+        });
+    });
+    
     /***************************
 
     append
