@@ -111,9 +111,9 @@ body {
 
 
 /* Hide the real file input */
-input[type="file"] {
+/* input[type="file"] {
   display: none;
-}
+} */
 
 /* Style the label to look like a button */
 .custom-file-label {
