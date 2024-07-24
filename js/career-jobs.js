@@ -29,7 +29,7 @@ function createJobHTML(job) {
             <p class="mil-mb-30"><strong>Expiry:</strong> ${job.expiry}</p>
             ${!job.is_expired ? `
             <div class="mil-up mil-mb-30">
-                <a target="_blank" rel="noopener noreferrer" href="apply.html?id=${job.id}" class="mil-link mil-dark mil-arrow-place">
+                <a target="_blank" rel="noopener noreferrer" href="apply.html?id=${job.id}" class="apply-button mil-link mil-dark mil-arrow-place">
                     <span>Apply Now</span>
                 </a>
             </div>
