@@ -13,12 +13,25 @@ $(function () {
 
     ***************************/
     const options = {
-        containers: ['#swupMain', '#swupMenu'],
-        animateHistoryBrowsing: true,
-        linkSelector: 'a:not([data-no-swup])',
-        animationSelector: '[class="mil-main-transition"]'
+        containers: ['#swupMain', '#swupMenu'],  // Maintain your container selectors
+        animateHistoryBrowsing: true,        // Preserve smooth navigation transitions
+        linkSelector: 'a:not([data-no-swup])', // Keep excluding links with `data-no-swup`
+        animationSelector: '[class="mil-main-transition"]', // Use your preferred animation class
+    
+        // Additional recommended options:
+        skipPopStateHandling: (event) => event.state?.source !== 'swup', // Avoid conflicts
+        cache: true,                         // Enable caching for faster loading (optional)
+        preload: true,                        // Preload linked content (optional)
     };
+    
     const swup = new Swup(options);
+    // Handle external links (optional, for improved user experience)
+document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default behavior
+        window.open(link.href, '_blank'); // Open link in new tab
+    });
+});
 
     /***************************
 
