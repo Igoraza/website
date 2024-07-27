@@ -44,6 +44,8 @@ document.getElementById('career-form').addEventListener('submit', function (even
     const instagram = formData.get('instagram');
     const whyApplying = formData.get('why-applying');
     const resume = formData.get('resume');
+    const address = formData.get('address')
+    const profile = formData.get('profile')
 
     // Clear previous error messages
     document.getElementById('name-error').innerText = '';
@@ -54,6 +56,10 @@ document.getElementById('career-form').addEventListener('submit', function (even
     document.getElementById('instagram-error').innerText = '';
     document.getElementById('why-applying-error').innerText = '';
     document.getElementById('resume-error').innerText = '';
+    document.getElementById('address-error').innerText = '';
+    document.getElementById('profile-error').innerText = '';
+
+
 
     // Validate inputs
     if (!name) {
@@ -87,7 +93,16 @@ document.getElementById('career-form').addEventListener('submit', function (even
     if (!resume) {
         document.getElementById('resume-error').innerText = 'Resume is required';
         isValid = false;
-    } else if (resume.type !== 'application/pdf') {
+    } 
+    if (!address) {
+        document.getElementById('address-error').innerText = 'Address is required';
+        isValid = false;
+    }
+    if (!profile) {
+        document.getElementById('profile-error').innerText = 'Profile is required';
+        isValid = false;
+    }
+    else if (resume.type !== 'application/pdf') {
         document.getElementById('resume-error').innerText = 'Only PDF files are allowed';
         isValid = false;
     } else if (resume.size > 7 * 1024 * 1024) {
@@ -112,6 +127,8 @@ document.getElementById('career-form').addEventListener('submit', function (even
         instagram: instagram,
         why_applying: whyApplying,
         job: jobId || '',
+        address: address,
+        profile: profile
     };
 
     const postData = new FormData();
