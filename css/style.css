@@ -2724,13 +2724,31 @@ team
 social icons
 
 ------------------------------------------- */
-.mil-social-icons {
+/* .mil-social-icons {
   padding: 0;
   margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+} */
+.mil-social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
 }
+
+.mil-social-icons li {
+  margin: 0 10px; /* Adjusts spacing between icons */
+}
+
+.mil-social-icons a {
+  display: inline-block;
+}
+
+
 .mil-social-icons.mil-center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
